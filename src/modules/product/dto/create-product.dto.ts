@@ -1,3 +1,8 @@
 import { Product } from 'src/modules/product/schemas/product.schema';
-
-export class CreateProductDto extends Product {}
+import { IsString, IsNotEmpty } from 'class-validator';
+import { Exclude } from 'class-transformer';
+export class CreateProductDto extends Product {
+  @IsNotEmpty()
+  @IsString()
+  title;
+}
